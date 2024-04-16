@@ -17,19 +17,11 @@ export const sidebarLinks = [
   {
     label: "Recordings",
     route: "/recordings",
-    imgUrl: "/icons/video.svg"
+    imgUrl: "/icons/Video.svg"
   },
   {
     label: "Personal Room",
     route: "/personal-room",
     imgUrl: "/icons/add-personal.svg"
   }
-]
-
-export const avatarImages = [
-  "/images/avatar-1.jpeg",
-  "/images/avatar-2.jpeg",
-  "/images/avatar-3.jpeg",
-  "/images/avatar-4.jpeg",
-  "/images/avatar-5.jpeg",
 ]

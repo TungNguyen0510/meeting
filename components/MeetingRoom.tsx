@@ -5,6 +5,7 @@ import {
   CallStatsButton,
   CallingState,
   PaginatedGridLayout,
+  ParticipantView,
   SpeakerLayout,
   useCallStateHooks,
 } from "@stream-io/video-react-sdk";
@@ -13,7 +14,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -36,6 +36,7 @@ const MeetingRoom = () => {
   const callingState = useCallCallingState();
 
   if (callingState !== CallingState.JOINED) return <Loader />;
+
   const CallLayout = () => {
     switch (layout) {
       case "grid":
@@ -50,7 +51,7 @@ const MeetingRoom = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
       <div className="relative flex size-full items-center justify-center">
-        <div className="flex size-full max-w-[1000px] items-center">
+        <div className="flex gap-10 size-full max-w-[1000px] items-center">
           <CallLayout />
         </div>
         <div
