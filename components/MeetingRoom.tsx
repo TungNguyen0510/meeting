@@ -49,9 +49,9 @@ const MeetingRoom = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
+    <section className="relative h-screen w-full overflow-hidden pt-4 dark:text-white">
       <div className="relative flex size-full items-center justify-center">
-        <div className="flex gap-10 size-full max-w-[1000px] items-center">
+        <div className="flex gap-10 size-full md:max-w-[1000px] items-center">
           <CallLayout />
         </div>
         <div
@@ -67,12 +67,12 @@ const MeetingRoom = () => {
 
         <DropdownMenu>
           <div className="flex items-center">
-            <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]">
+            <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d]  px-4 py-2 hover:bg-[#4c535b]">
               <LayoutList size={20} className="text-white" />
             </DropdownMenuTrigger>
           </div>
 
-          <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
+          <DropdownMenuContent className="border-none bg-dark-1 text-white">
             {[
               { value: "grid", label: "Grid" },
               { value: "speaker-left", label: "Speaker Left" },

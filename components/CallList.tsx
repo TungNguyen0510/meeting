@@ -79,10 +79,10 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
             key={(meeting as Call).id}
             icon={
               type === "ended"
-                ? "/icons/previous.svg"
+                ? "previous"
                 : type === "upcoming"
-                ? "/icons/upcoming.svg"
-                : "/icons/recordings.svg"
+                ? "upcoming"
+                : "recordings"
             }
             title={
               (meeting as Call).state?.custom?.description ||
@@ -101,7 +101,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
                     (meeting as Call).id
                   }`
             }
-            buttonIcon1={type === "recordings" ? "/icons/play.svg" : undefined}
+            buttonIcon1={type === "recordings" ? "play" : undefined}
             buttonText={type === "recordings" ? "Play" : "Start"}
             handleClick={
               type === "recordings"
@@ -111,7 +111,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
           />
         ))
       ) : (
-        <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
+        <h1 className="text-2xl font-bold dark:text-white">{noCallsMessage}</h1>
       )}
     </div>
   );

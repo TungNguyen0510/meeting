@@ -5,6 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
+import Icon, { svgPath } from "@/components/Icon";
 
 interface MeetingCardProps {
   title: string;
@@ -30,9 +31,9 @@ const MeetingCard = ({
   const { toast } = useToast();
 
   return (
-    <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-dark-1 px-5 py-8 xl:max-w-[568px]">
+    <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] dark:bg-dark-1 bg-sky-1 px-5 py-8 xl:max-w-[568px]">
       <article className="flex flex-col gap-5">
-        <Image src={icon} alt="upcoming" width={28} height={28} />
+        <Icon name={icon as keyof typeof svgPath} />
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
             <h1 className="text-2xl font-bold">{title}</h1>
@@ -43,9 +44,12 @@ const MeetingCard = ({
       <article className={cn("flex justify-end w-full relative", {})}>
         {!isPreviousMeeting && (
           <div className="flex gap-2">
-            <Button onClick={handleClick} className="rounded bg-blue-1 px-6">
+            <Button
+              onClick={handleClick}
+              className="rounded bg-blue-1 text-white px-6"
+            >
               {buttonIcon1 && (
-                <Image src={buttonIcon1} alt="feature" width={20} height={20} />
+                <Icon name={buttonIcon1 as keyof typeof svgPath} />
               )}
               &nbsp; {buttonText}
             </Button>
@@ -56,14 +60,9 @@ const MeetingCard = ({
                   title: "Link Copied",
                 });
               }}
-              className="bg-dark-4 px-6"
+              className="dark:bg-dark-4 bg-sky-3 px-6"
             >
-              <Image
-                src="/icons/copy.svg"
-                alt="feature"
-                width={20}
-                height={20}
-              />
+              <Icon name="copy" />
               &nbsp; Copy Link
             </Button>
           </div>

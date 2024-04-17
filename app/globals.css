@@ -42,15 +42,72 @@
   height: 40px;
 }
 
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-.glassmorphism2 {
-  background: rgba(18, 17, 17, 0.25);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+@media screen and (max-width: 768px) {
+  .str-video__video-preview-container {
+    width: calc(100vw - 24px) !important;
+  }
+
+  .str-video__speaker-layout--variant-left,
+  .str-video__speaker-layout--variant-right {
+    display: flex;
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .str-video__participant-view {
+    height: 240px;
+  }
+
+  .str-video__speaker-layout__participants-bar-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .str-video__screen-share-overlay {
+    gap: 1rem !important;
+  }
+  .str-video__screen-share-overlay__title {
+    font-size: 1rem !important;
+  }
+  .str-video__screen-share-overlay__button {
+    height: 30px;
+  }
+
+  .str-video__speaker-layout__participants-bar {
+    flex-direction: row !important;
+    gap: 10px;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    width: 100vw !important;
+  }
+
+  .str-video__speaker-layout__participant-tile {
+    width: 160px !important;
+    height: 160px !important;
+    min-width: unset !important;
+  }
+
+  .str-video__video-placeholder {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .str-video__video-placeholder__avatar {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .str-video__participant-details__name {
+    font-size: 8px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .str-video__participant-view > .str-video__call-controls__button {
+    top: 4px !important;
+    left: 4px !important;
+  }
 }
 
 /* ==== clerk class override ===== */
@@ -99,4 +156,15 @@
     animation-timing-function: ease-in;
     width: 100%;
   }
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.glassmorphism2 {
+  background: rgba(18, 17, 17, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }

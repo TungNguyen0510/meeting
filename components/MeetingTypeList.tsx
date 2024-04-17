@@ -79,28 +79,28 @@ const MeetingTypeList = () => {
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4 2xl:w-4/5 2xl:mx-auto">
       <HomeCard
-        img="/icons/add-meeting.svg"
+        icon="add-meeting"
         title="New Meeting"
         des="Start an instant meeting"
         className="bg-orange-1"
         handleClick={() => setMeetingState("isInstantMeeting")}
       />
       <HomeCard
-        img="/icons/join-meeting.svg"
+        icon="join-meeting"
         title="Join meeting"
         des="Via invitation link"
         className="bg-blue-1"
         handleClick={() => setMeetingState("isJoiningMeeting")}
       />
       <HomeCard
-        img="/icons/schedule.svg"
+        icon="schedule"
         title="Schedule Meeting"
         des="Plan your meeting"
         className="bg-purple-1"
         handleClick={() => setMeetingState("isScheduleMeeting")}
       />
       <HomeCard
-        img="/icons/recordings.svg"
+        icon="recordings"
         title="View Recordings"
         des="Check out your recordings"
         className="bg-yellow-1"
@@ -117,18 +117,18 @@ const MeetingTypeList = () => {
           handleClick={createMeeting}
         >
           <div className="flex flex-col gap-2.5">
-            <label className="text-base text-normal leading-[22px] text-sky-2">
+            <label className="text-base text-normal leading-[22px] dark:text-sky-2">
               Add a description
             </label>
             <Textarea
-              className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="border-none dark:bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
               onChange={(e) => {
                 setValues({ ...values, description: e.target.value });
               }}
             />
           </div>
           <div className="flex w-full flex-col gap-2.5">
-            <label className="text-base text-normal leading-[22px] text-sky-2">
+            <label className="text-base text-normal leading-[22px] dark:text-sky-2">
               Select Date and Time
             </label>
             <ReactDatePicker
@@ -139,7 +139,7 @@ const MeetingTypeList = () => {
               timeIntervals={15}
               timeCaption="time"
               dateFormat="MMMM d, yyyy h:mm aa"
-              className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+              className="w-full rounded dark:bg-dark-3 p-2 focus:outline-none"
             />
           </div>
         </MeetingModal>
@@ -177,7 +177,7 @@ const MeetingTypeList = () => {
       >
         <Input
           placeholder="Meeting link"
-          className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+          className="border-none dark:bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
           onChange={(e) => setValues({ ...values, link: e.target.value })}
         />
       </MeetingModal>

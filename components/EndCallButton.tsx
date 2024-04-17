@@ -21,7 +21,7 @@ const EndCallButton = () => {
         await call?.endCall();
         route.push("/");
       }}
-      className="bg-red-500"
+      className="bg-red-500 text-white"
     >
       End call for everyone
     </Button>

@@ -28,7 +28,7 @@ const MeetingSetup = ({
   }, [isMicCamToggledOn, call?.camera, call?.microphone]);
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center gap-6 text-white">
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-6 dark:text-white">
       <h1 className="text-2xl font-bold">Setup</h1>
       <VideoPreview />
       <div className="flex flex-col h-16 items-center justify-center gap-3">
@@ -43,7 +43,7 @@ const MeetingSetup = ({
         </label>
 
         <Button
-          className="rounded-md bg-green-500 px-4 py-2.5"
+          className="rounded-md bg-green-500 text-white px-4 py-2.5"
           onClick={() => {
             call.join();
             setIsSetupComplete(true);

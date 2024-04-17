@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React from "react";
+import Icon, { svgPath } from "@/components/Icon";
 
 interface HomeCardProps {
-  img: string;
+  icon: string;
   title: string;
   des: string;
   className?: string;
   handleClick?: () => void;
 }
 const HomeCard = ({
-  img,
+  icon,
   title,
   des,
   className,
@@ -25,9 +25,9 @@ const HomeCard = ({
       onClick={handleClick}
     >
       <div className="glassmorphism flex items-center justify-center size-12 rounded-[10px]">
-        <Image src={img} alt="meeting" width={27} height={27} />
+        <Icon name={icon as keyof typeof svgPath} />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 text-white">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p className="text-lg font-normal">{des}</p>
       </div>

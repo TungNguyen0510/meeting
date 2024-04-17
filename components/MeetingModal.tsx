@@ -34,7 +34,7 @@ const MeetingModal = ({
 }: MeetingModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="flex w-full max-w-[520px] flex-col gap-6 border-none bg-dark-1 px-6 py-9 text-white">
+      <DialogContent className="flex w-full max-w-[520px] rounded-lg flex-col gap-6 border-none dark:bg-dark-1 bg-sky-1 px-6 py-9 dark:text-white">
         <div className="flex flex-col gap-6">
           {image && (
             <div className="flex justify-center">
@@ -46,7 +46,7 @@ const MeetingModal = ({
           </h1>
           {children}
           <Button
-            className="bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0"
+            className="bg-blue-1 text-white focus-visible:ring-0 focus-visible:ring-offset-0"
             onClick={handleClick}
           >
             {buttonIcon && (

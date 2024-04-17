@@ -12,22 +12,20 @@ import Link from "next/link";
 import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Icon, { svgPath } from "@/components/Icon";
 
 const MobileNav = () => {
   const pathname = usePathname();
   return (
     <section className="w-full max-w-[264px]">
       <Sheet>
-        <SheetTrigger className="flex items-center justify-center">
-          <Image
-            src="/icons/hamburger.svg"
-            width={36}
-            height={36}
-            alt="hamberger"
-            className="cursor-pointer sm:hidden"
-          />
+        <SheetTrigger className="flex items-center justify-center cursor-pointer sm:hidden">
+          <Icon name="hamberger" />
         </SheetTrigger>
-        <SheetContent side={"left"} className="border-none bg-dark-1">
+        <SheetContent
+          side={"left"}
+          className="border-none dark:bg-dark-1 bg-sky-1"
+        >
           <div className="flex items-center gap-1">
             <Image
               src="/icons/logo.svg"
@@ -36,11 +34,11 @@ const MobileNav = () => {
               alt="logo"
               className="max-sm:size-10"
             />
-            <p className="text-[26px] font-extrabold text-white">Yoom</p>
+            <p className="text-[26px] font-extrabold dark:text-white">Yoom</p>
           </div>
           <div className="flex flex-col h-[calc(100vh-72px)] justify-between overflow-y-auto">
             <SheetClose asChild>
-              <section className="flex h-full flex-col gap-6 pt-16 text-white">
+              <section className="flex h-full flex-col gap-6 pt-16 dark:text-white">
                 {sidebarLinks.map((link) => {
                   const isActive =
                     pathname === link.route ||
@@ -55,13 +53,8 @@ const MobileNav = () => {
                           { "bg-blue-1": isActive }
                         )}
                       >
-                        <Image
-                          src={link.imgUrl}
-                          alt={link.label}
-                          width={20}
-                          height={20}
-                        />
-                        <p className="font-semibold">{link.label}</p>
+                        <Icon name={link.icon as keyof typeof svgPath} />
+                        <h3 className="font-semibold">{link.label}</h3>
                       </Link>
                     </SheetClose>
                   );

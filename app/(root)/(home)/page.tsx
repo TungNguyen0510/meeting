@@ -1,8 +1,7 @@
 "use client";
 
 import MeetingTypeList from "@/components/MeetingTypeList";
-import { useGetCalls } from "@/hooks/useGetCalls";
-import React, { useEffect } from "react";
+import React from "react";
 
 const Home = () => {
   const now = new Date();
@@ -14,8 +13,6 @@ const Home = () => {
   const date = new Intl.DateTimeFormat("en-US", {
     dateStyle: "full",
   }).format(now);
-
-  // const { upcomingCalls } = useGetCalls();
 
   return (
     <section className="flex size-full flex-col gap-10 text-white">
